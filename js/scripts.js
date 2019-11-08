@@ -17,6 +17,7 @@ Pizza.prototype.totalCost = function(){
     }
         return this.price;
 });
+};
 
 
 // Front End Logic
@@ -24,15 +25,17 @@ $(document).ready(function(){
   $("#submitBtn").submit(function(event){
     event.preventDefault();
     var toppingsInputs = $("#toppings:checked");
+    console.log(toppingsInputs);
     var toppingsArray = [];
     var sizeInputs = $("#size").val();
 
     toppingsInputs.forEach(function(toppingInput){
       toppingsArray.push(toppingInput.val());
-      console.log(toppingsArray);
+
     });
+          console.log(toppingsArray);
     var pizzaPizza = new Pizza(toppingsArray, sizeInputs);
     var price = pizzaPizza.totalCost();
+    console.log(price);
   });
 });
-};

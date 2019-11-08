@@ -11,11 +11,11 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1>PIZZA</h1>
-        <h2>Build It:Buy It</h2>
+        <h1>PIZZA|AZZIP</h1>
+        <h2>Build It | Buy It</h2>
       </div>
 
-      <form>
+      <form id="form">
       <div class="radio">
         <label>
           <input type="radio" name="size" value="twelveInch" id="size" checked>
@@ -28,8 +28,7 @@
           20 Inch
         </label>
         </div>
-      </form>
-      <form>
+
         <div class="checkbox">
           <label>
           <input type="checkbox" name="toppings" id="toppings" value="pepperoni">
@@ -47,6 +46,7 @@
           <input type="checkbox" name="toppings" id="toppings" value="peppers">
           Peppers
           </label>
+          <br>
           <label>
           <input type="checkbox" name="toppings" id="toppings" value="onions">
           Onions
@@ -66,6 +66,11 @@
         </div>
       </form>
             <button type="button" class="btn btn-dark" id="submitBtn">Submit</button>
+
+    </div>
+    <div id="orderConfirmation" class="card">
+      <h2>Order Summary:</h2>
+      <h2>Order Total:</h2>
 
     </div>
 

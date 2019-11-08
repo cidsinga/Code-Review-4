@@ -23,7 +23,7 @@ Pizza.prototype.totalCost = function(){
 
 // Front End Logic
 $(document).ready(function(){
-  $("#submitBtn").submit(function(event){
+  $("#form").submit(function(event){
     event.preventDefault();
       console.log("hey");
     var toppingsInputs = $("#toppings:checked");

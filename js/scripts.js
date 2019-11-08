@@ -17,7 +17,7 @@ Pizza.prototype.totalCost = function(){
           this.price += 10;
     }
         return this.price;
-});
+})
 };
 
 
@@ -29,6 +29,7 @@ $(document).ready(function(){
     var toppingsInputs = $("#toppings:checked");
     var toppingsArray = [];
     var sizeInputs = $("#size").val();
+    // trying stuff below
     $("input#size").val();
     $("input#toppings").val();
     console.log(toppingsInput);

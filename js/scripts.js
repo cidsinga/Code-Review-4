@@ -7,15 +7,14 @@ function Pizza(toppings, size){
 
 Pizza.prototype.totalCost = function(){
   this.toppings.forEach(function(toppings){
-   this.price += 2;
-    }
+    this.price += 2;
    if (this.size === twentyInch) {
           this.price += 15;
     }
     else if (this.size === twelveInch) {
           this.price += 10;
     }
-        return this.price
+        return this.price;
 });
 
 
@@ -23,17 +22,14 @@ Pizza.prototype.totalCost = function(){
 $(document).ready(function(){
   $("#submitBtn").submit(function(event){
     event.preventDefault();
-    var sizeInputs = $(size).val();
+    var sizeInputs = $("#size").val();
     var toppingsInputs = $("#toppings : checked");
     var toppingsArray = [];
     toppingInputs.forEach(function(toppingInput){
       toppingsArray.push(toppinginput.val());
-
     });
-
     var pizzaPizza = new Pizza(toppings, size);
     var price = pizzaPizza.totalCost();
-
-
-  })
+  });
 });
+};

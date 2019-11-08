@@ -34,6 +34,7 @@ $(document).ready(function(){
     toppingsInputs.forEach(function(toppingInput){
       toppingsArray.push(toppingInput.val());
           console.log(toppingsArray);
+          console.log(toppingInput);
     });
 
     var pizzaPizza = new Pizza(toppingsArray, sizeInputs);

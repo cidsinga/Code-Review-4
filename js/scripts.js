@@ -32,7 +32,7 @@ $(document).ready(function(){
     });
 
     var pizzaPizza = new Pizza(toppings, size);
-    var price = pizzaPizza.getPrice();
+    var price = pizzaPizza.totalCost();
 
 
   })

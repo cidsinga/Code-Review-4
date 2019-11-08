@@ -17,7 +17,7 @@ Pizza.prototype.totalCost = function(){
           this.price += 10;
     }
         return this.price;
-})
+  })
 };
 
 
@@ -26,7 +26,7 @@ $(document).ready(function(){
   $("#form").submit(function(event){
     event.preventDefault();
       console.log("hey");
-    var toppingsInputs = $("#toppings:checked");
+    var toppingsInputs = $("#toppings:checked").val();
     var toppingsArray = [];
     var sizeInputs = $("#size").val();
     // trying stuff below

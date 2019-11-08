@@ -1,10 +1,11 @@
 // Business Logic
+
 function Pizza(toppings, size){
   this.toppings = toppings;
   this.size = size;
   this.price = 0;
 }
-
+console.log("hi");
 Pizza.prototype.totalCost = function(){
   this.toppings.forEach(function(toppings){
     this.price += 2;
@@ -22,13 +23,15 @@ Pizza.prototype.totalCost = function(){
 $(document).ready(function(){
   $("#submitBtn").submit(function(event){
     event.preventDefault();
-    var sizeInputs = $("#size").val();
-    var toppingsInputs = $("#toppings : checked");
+    var toppingsInputs = $("#toppings:checked");
     var toppingsArray = [];
-    toppingInputs.forEach(function(toppingInput){
-      toppingsArray.push(toppinginput.val());
+    var sizeInputs = $("#size").val();
+
+    toppingsInputs.forEach(function(toppingInput){
+      toppingsArray.push(toppingInput.val());
+      console.log(toppingsArray);
     });
-    var pizzaPizza = new Pizza(toppings, size);
+    var pizzaPizza = new Pizza(toppingsArray, sizeInputs);
     var price = pizzaPizza.totalCost();
   });
 });

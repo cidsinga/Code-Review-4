@@ -19,7 +19,7 @@ Pizza.prototype.totalCost = function(){
 });
 };
 
-
+console.log("hey");
 // Front End Logic
 $(document).ready(function(){
   $("#submitBtn").submit(function(event){
@@ -28,12 +28,14 @@ $(document).ready(function(){
     console.log(toppingsInputs);
     var toppingsArray = [];
     var sizeInputs = $("#size").val();
+    console.log(sizeInputs);
+    console.log("howdy");
 
     toppingsInputs.forEach(function(toppingInput){
       toppingsArray.push(toppingInput.val());
-
-    });
           console.log(toppingsArray);
+    });
+
     var pizzaPizza = new Pizza(toppingsArray, sizeInputs);
     var price = pizzaPizza.totalCost();
     console.log(price);

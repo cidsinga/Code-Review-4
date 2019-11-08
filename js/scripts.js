@@ -6,6 +6,7 @@ function Pizza(toppings, size){
   this.price = 0;
 }
 console.log("hi");
+
 Pizza.prototype.totalCost = function(){
   this.toppings.forEach(function(toppings){
     this.price += 2;
@@ -19,17 +20,20 @@ Pizza.prototype.totalCost = function(){
 });
 };
 
-console.log("hey");
+
 // Front End Logic
 $(document).ready(function(){
   $("#submitBtn").submit(function(event){
     event.preventDefault();
+      console.log("hey");
     var toppingsInputs = $("#toppings:checked");
-    console.log(toppingsInputs);
     var toppingsArray = [];
     var sizeInputs = $("#size").val();
-    console.log(sizeInputs);
-    console.log("howdy");
+    $("input#size").val();
+    $("input#toppings").val();
+    console.log(toppingsInput);
+
+console.log("hey");
 
     toppingsInputs.forEach(function(toppingInput){
       toppingsArray.push(toppingInput.val());

@@ -1,0 +1,9 @@
+body {
+  background-color: #901919;
+}
+.jumbotron {
+  background-color: #680202;
+  text-align: center;
+  font-weight: bold;
+  color: black;
+}

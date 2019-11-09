@@ -8,16 +8,19 @@ function Pizza(toppings, size){
 console.log("hi");
 
 Pizza.prototype.totalCost = function(){
+  console.log(this.toppings);
+  // using bind instead of giving this.price or size new variable names
   this.toppings.forEach(function(toppings){
+    console.log(this.size);
     this.price += 2;
-   if (this.size === twentyInch) {
-          this.price += 15;
-    }
-    else if (this.size === twelveInch) {
-          this.price += 10;
-    }
-        return this.price;
-  })
+  }.bind(this))
+  if (this.size === "twentyInch") {
+         this.price += 15;
+   }
+   else if (this.size === "twelveInch") {
+         this.price += 10;
+   }
+   return this.price;
 };
 
 
@@ -26,20 +29,14 @@ $(document).ready(function(){
   $("#form").submit(function(event){
     event.preventDefault();
       console.log("hey");
-    var toppingsInputs = $("#toppings:checked").val();
+    var toppingsInputs = $(".toppings:checked").toArray();
     var toppingsArray = [];
-    var sizeInputs = $("#size").val();
+    var sizeInputs = $("[name=size]").val();
     // trying stuff below
-    $("input#size").val();
-    $("input#toppings").val();
-    console.log(toppingsInput);
 
-console.log("hey");
+    toppingsInputs.forEach(function(toppingInput){  //each instead of forEach as it wasn't working
+      toppingsArray.push($(toppingInput).val());
 
-    toppingsInputs.forEach(function(toppingInput){
-      toppingsArray.push(toppingInput.val());
-          console.log(toppingsArray);
-          console.log(toppingInput);
     });
 
     var pizzaPizza = new Pizza(toppingsArray, sizeInputs);

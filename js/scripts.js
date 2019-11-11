@@ -32,15 +32,18 @@ $(document).ready(function(){
     var toppingsInputs = $(".toppings:checked").toArray();
     var toppingsArray = [];
     var sizeInputs = $("[name=size]").val();
-    // trying stuff below
 
-    toppingsInputs.forEach(function(toppingInput){  //each instead of forEach as it wasn't working
+
+    toppingsInputs.forEach(function(toppingInput){
       toppingsArray.push($(toppingInput).val());
-
     });
 
     var pizzaPizza = new Pizza(toppingsArray, sizeInputs);
     var price = pizzaPizza.totalCost();
-    console.log(price);
+    var finalToppings = toppingsArray.toString();
+    console.log(toppingsArray);
+    $("#orderConfirmation").show();
+    $("#total").text(price);
+    $("#summary").text(finalToppings);
   });
 });

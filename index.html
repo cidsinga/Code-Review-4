@@ -21,60 +21,55 @@
             <input type="radio" name="size" value="twelveInch" class="size" checked>
             12 Inch
           </label>
-          </div>
-          <div class="radio">
+        </div>
+        <div class="radio">
           <label>
             <input type="radio" name="size" value="twentyInch" class="size" checked>
             20 Inch
           </label>
-          </div>
-
-          <div class="checkbox">
-            <label>
+        </div>
+        <div class="checkbox">
+          <label>
             <input type="checkbox" name="toppings" class="toppings" value="pepperoni">
             Pepperoni
-            </label>
-            <label>
+          </label>
+          <label>
             <input type="checkbox" name="toppings" class="toppings" value="sausage">
             Sausage
-            </label>
-            <label>
+          </label>
+          <label>
             <input type="checkbox" name="toppings" class="toppings" value="olives">
             Olives
-            </label>
-            <label>
+          </label>
+          <label>
             <input type="checkbox" name="toppings" class="toppings" value="peppers">
             Peppers
-            </label>
-            <br>
-            <label>
+          </label>
+          <br>
+          <label>
             <input type="checkbox" name="toppings" class="toppings" value="onions">
             Onions
-            </label>
-            <label>
+          </label>
+          <label>
             <input type="checkbox" name="toppings" class="toppings" value="garlic">
             Garlic
-            </label>
-            <label>
+          </label>
+          <label>
             <input type="checkbox" name="toppings" class="toppings" value="ham">
             Ham
-            </label>
-            <label>
+          </label>
+          <label>
             <input type="checkbox" name="toppings" class="toppings" value="pineapple">
             Pineapple
-            </label>
-          </div>
+          </label>
+        </div>
         <button type="submit" class="btn btn-dark" class="submitBtn">Submit</button>
       </form>
+      <div id="orderConfirmation" class="card">
+        <h2>Order Summary: <span id="summary"></span></h2>
+        <h2>Order Total: $<span id="total"></span></h2>
 
-
+      </div>
     </div>
-    <div id="orderConfirmation" class="card">
-      <h2>Order Summary: <span id="summary"></span></h2>
-      <h2>Order Total: $<span id="total"></span></h2>
-
-    </div>
-
-
   </body>
 </html>

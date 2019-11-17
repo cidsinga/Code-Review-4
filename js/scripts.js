@@ -5,13 +5,10 @@ function Pizza(toppings, size){
   this.size = size;
   this.price = 0;
 }
-console.log("hi");
 
 Pizza.prototype.totalCost = function(){
-  console.log(this.toppings);
   // using bind instead of giving this.price or size new variable names
   this.toppings.forEach(function(toppings){
-    console.log(this.size);
     this.price += 2;
   }.bind(this))
   if (this.size === "twentyInch") {
@@ -28,10 +25,9 @@ Pizza.prototype.totalCost = function(){
 $(document).ready(function(){
   $("#form").submit(function(event){
     event.preventDefault();
-      console.log("hey");
     var toppingsInputs = $(".toppings:checked").toArray();
     var toppingsArray = [];
-    var sizeInputs = $("[name=size]").val();
+    var sizeInputs = $(".size:checked").val();
 
 
     toppingsInputs.forEach(function(toppingInput){
@@ -41,7 +37,6 @@ $(document).ready(function(){
     var pizzaPizza = new Pizza(toppingsArray, sizeInputs);
     var price = pizzaPizza.totalCost();
     var finalToppings = toppingsArray.toString();
-    console.log(toppingsArray);
     $("#orderConfirmation").show();
     $("#total").text(price);
     $("#summary").text(finalToppings);

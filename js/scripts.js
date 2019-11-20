@@ -40,5 +40,22 @@ $(document).ready(function(){
     $("#orderConfirmation").show();
     $("#total").text(price);
     $("#summary").text(finalToppings);
+
+    let request = new XMLHttpRequest();
+const url = `https://api.giphy.com/v1/gifs/translate?api_key=Ho7J61QsxL7wbzY2CXyPYUenr8U2ixum&s=pizza_the_hut`;
+
+request.onreadystatechange = function() {
+  if (this.readyState === 4 && this.status === 200) {
+    const response = JSON.parse(this.responseText);
+    getElements(response);
+  }
+}
+
+request.open("GET", url, true);
+request.send();
+
+const getElements = function(response) {
+  $('#hut').attr("src", response.data.images.original.url);
+}
   });
 });
